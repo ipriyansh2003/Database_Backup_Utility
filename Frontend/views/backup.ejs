@@ -1,0 +1,205 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backup MySQL</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Backup MySQL Database</h1>
+  <form action="/api/backup" method="POST">
+    <label for="host">Host:</label>
+    <input type="text" id="host" name="host" required>
+    <br>
+    <label for="user">User:</label>
+    <input type="text" id="user" name="user" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="database">Database:</label>
+    <input type="text" id="database" name="database" required>
+    <br>
+    <button type="submit">Backup</button>
+  </form>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Database Backup</title>
+     <style>
+      /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background: url('https://media.istockphoto.com/id/1399944678/photo/multiple-database-is-placed-on-relational-database-tables-with-server-room-and-datacenter.jpg?s=612x612&w=0&k=20&c=SBaXkPg5hWPX2K5BkTyH8lhX82Get_MIWDpeTZeUnOU=') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Form Container */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+h2 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+     </style>
+ </head>
+ <body>
+ 
+     <nav>
+         <ul>
+             <li><a href="/">Home</a></li>
+             <li><a href="/backup">MySQL</a></li>
+             <li><a href="/nosql">MongoDB</a></li>
+         </ul>
+     </nav>
+     
+     <div class="container">
+         <h2>Database Backup</h2>
+         <form id="backupForm" action="/api/backup" method="POST" onsubmit="return validateForm()">
+             <label for="host">Host:</label>
+             <input type="text" id="host" name="host" required>
+ 
+             <label for="user">User:</label>
+             <input type="text" id="user" name="user" required>
+ 
+             <label for="password">Password:</label>
+             <input type="text" id="password" name="password" required>
+ 
+             <label for="database">Database:</label>
+             <input type="text" id="database" name="database" required>
+ 
+             <input type="submit" value="Backup">
+         </form>
+ 
+         <div id="error-message" class="error"></div>
+     </div>
+ 
+     <script>
+         function validateForm() {
+             
+             document.getElementById("error-message").innerText = "";
+ 
+         
+             const host = document.getElementById("host").value;
+             const user = document.getElementById("user").value;
+             const password = document.getElementById("password").value;
+             const database = document.getElementById("database").value;
+ 
+             
+             if (host === "" || user === "" || password === "" || database === "") {
+                 document.getElementById("error-message").innerText = "All fields are required!";
+                 return false;
+             }
+ 
+             
+             return true;
+         }
+     </script>
+ <footer>
+     <p>&copy; 2025 Database Guide. All rights reserved.</p>
+ </footer>
+ </body>
+ </html>
+ 

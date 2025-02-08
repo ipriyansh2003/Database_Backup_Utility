@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Backup Completed Successfully</h1>
+    
+    <% if (pdf) { %>
+        <p>Your backup report is ready.</p>
+        <a href="/api/download?pdf=<%= pdf %>" class="btn">Download PDF</a>
+    <% } else { %>
+        <p>Backup completed, but no report available.</p>
+    <% } %>
+
+    <br><br>
+    <a href="/" class="btn">Go to Home</a>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Database successfully Backuped </h1>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Success</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://media.istockphoto.com/id/1399944678/photo/multiple-database-is-placed-on-relational-database-tables-with-server-room-and-datacenter.jpg?s=612x612&w=0&k=20&c=SBaXkPg5hWPX2K5BkTyH8lhX82Get_MIWDpeTZeUnOU=') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+p {
+    color: #555;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/backup">MySQL</a></li>
+            <li><a href="/nosql">MongoDB</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h2>Backup Successful!</h2>
+        
+    <% if (pdf) { %>
+        <p>Your backup report is ready.</p>
+        <a href="/api/download?pdf=<%= pdf %>" class="btn">Download PDF</a>
+    <% } else { %>
+        <p>Backup completed, but no report available.</p>
+    <% } %>
+
+    <br><br>
+    <a href="/" class="btn">Go to Home</a>
+    </div>
+    <footer>
+        <p>&copy; 2025 Database Guide. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
